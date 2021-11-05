@@ -9,6 +9,7 @@ The class is defined in [FA.hpp](FA.hpp).
 	`FA(const std::vector<std::tuple<state_type, transition_type, state_type>>& transitions, 
 	const std::unordered_set<state_type>& initial_states, 
 	const std::unordered_set<state_type>& final_states);`
+	
 	Parameters:
 	- `transitions` contains tuples of <start_state, symbol_from_alphabet, end_state> that will become the possible transitions of the automaton
 	- `initial_states` is the set of initial states
