@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="CharFAReader">
-    <Position X="4.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
-      <FileName>CharFAReader.hpp</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="FA&lt;state_type, transition_type&gt;">
     <Position X="0.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AEABAAACAAAhAAAAAAAAAAAEAIABAAAEQAgAAAQAAAg=</HashCode>
       <FileName>FA.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CharFAReader">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>CharFAReader.h</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -5,7 +5,7 @@
 #include <functional>
 #include <optional>
 #include "FA.hpp"
-#include "CharFAReader.hpp"
+#include "CharFAReader.h"
 using namespace std;
 
 template <std::input_iterator iter_type>
