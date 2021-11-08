@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CharFAReader.hpp" />
     <ClInclude Include="FA.hpp" />
   </ItemGroup>
   <ItemGroup>

@@ -5,9 +5,8 @@
 #include <functional>
 #include <optional>
 #include "FA.hpp"
+#include "CharFAReader.hpp"
 using namespace std;
-
-FA<char, char> read_from_file(string filename);
 
 template <std::input_iterator iter_type>
 string make_string(iter_type begin, iter_type end);
@@ -28,7 +27,7 @@ int main()
 			cout << "Filename: ";
 			string fn;
 			cin >> fn;
-			fa = read_from_file(fn);
+			fa = CharFAReader::readFA(fn);
 		},
 		[&fa]() {
 			if (!fa.has_value()) 
@@ -66,46 +65,6 @@ int main()
 	} while (choice != 0);
 
 	return 0;
-}
-
-FA<char, char> read_from_file(string filename)
-{
-	unordered_set<char> initial_states;
-	unordered_set<char> final_states;
-	vector<tuple<char, char, char>> transitions;
-
-	ifstream in(filename);
-	string line;
-	size_t step = 0;
-	while (getline(in, line))
-	{
-		if (line.size() == 0)
-			continue;
-		switch (step)
-		{
-		case 0: // reading initial states
-			if (line.size() > 1)
-				++step;
-			else
-			{
-				initial_states.insert(line[0]);
-				break;
-			}
-		case 1: // reading transitions
-			if (line.size() < 3)
-				step += 1;
-			else
-			{
-				transitions.push_back(make_tuple(line[0], line[1], line[2]));
-				break;
-			}
-		case 2: // reading final states
-			final_states.insert(line[0]);
-			break;
-		}
-	}
-
-	return FA<char, char>{ transitions, initial_states, final_states };
 }
 
 void display_fa_data(const FA<char, char>& fa)
