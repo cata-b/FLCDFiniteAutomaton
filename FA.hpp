@@ -168,6 +168,9 @@ inline bool FA<state_type, transition_type>::accepts(iter_type begin, iter_type 
 	if (!_is_deterministic)
 		throw std::runtime_error("This finite automaton is not deterministic!");
 
+	if (begin == end)
+		return _final_state_ids.find(*_initial_state_ids.begin()) != _final_state_ids.end(); // initial state is in final states
+
 	auto current_state = *_initial_state_ids.begin();
 	auto current_item = begin;
 	while (current_item != end)

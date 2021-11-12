@@ -49,8 +49,9 @@ int main()
 				return;
 			}
 			string test;
-			cout << "Enter sequence: ";
-			cin >> test;
+			cout << "Enter sequence: \n";
+			getc(stdin);
+			getline(cin, test);
 			cout << "The automaton " << (fa.value().accepts(test.begin(), test.end()) ? "accepts " : "does not accept ") << "this sequence.\n";
 		}
 	};
